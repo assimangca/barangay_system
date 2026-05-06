@@ -147,7 +147,12 @@
         @endif
     </div>
     @endif
-
+    <div class="mb-6">
+        <a href="{{ route('home') }}" 
+           class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+            ← Back to Home
+        </a>
+    </div>
 </div>
 </body>
 </html>
