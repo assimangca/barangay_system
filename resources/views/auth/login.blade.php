@@ -48,6 +48,11 @@
                 class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
             Sign In
         </button>
+        <div class="text-center mt-4">
+    <a href="{{ route('register') }}" class="text-blue-600 hover:underline">
+        Create Account
+    </a>
+</div>
     </form>
 
     <p class="text-center text-sm text-gray-500 mt-6">
