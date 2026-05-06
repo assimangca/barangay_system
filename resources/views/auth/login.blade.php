@@ -44,15 +44,17 @@
             <input type="checkbox" name="remember" id="remember" class="rounded">
             <label for="remember" class="text-sm text-gray-600">Remember me</label>
         </div>
-        <button type="submit"
-                class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
-            Sign In
-        </button>
-    </form>
+      <button type="submit"
+            class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
+        Sign In
+    </button>
+</form>
 
-    <p class="text-center text-sm text-gray-500 mt-6">
-        <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Back to public site</a>
-    </p>
+<div class="mt-4">
+    <a href="{{ route('home') }}" 
+       class="block w-full text-center bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
+        Back to public site
+    </a>
 </div>
 </body>
 </html>
