@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Public as PublicController;
+<<<<<<< HEAD
 use App\Http\Controllers\Auth\RegisteredUserController;
+=======
+use App\Http\Controllers\DonationController;
+>>>>>>> 8c6065881ad1aa10421c2a358ef42e394413b4d5
 
 // Public Routes
 Route::get('/', [PublicController\HomeController::class, 'index'])->name('home');
@@ -13,10 +17,23 @@ Route::get('/track', [PublicController\ComplaintController::class, 'track'])->na
 Route::post('/complaints', [PublicController\ComplaintController::class, 'store'])->name('complaints.store');
 Route::get('/complaints/submit', [PublicController\ComplaintController::class, 'create'])->name('complaints.create');
 
+<<<<<<< HEAD
 // Register Routes
 Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
     ->name('register');
+=======
+// ── Donation Public Routes ─────────────────────────────────────────────────
+Route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
+Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
+Route::get('/donate/track', [DonationController::class, 'track'])->name('donations.track');
+Route::get('/donate/thank-you/{donation}', [DonationController::class, 'thankYou'])->name('donations.thank-you');
+Route::get('/donate/history', [DonationController::class, 'index'])->name('donations.index');
+Route::get('/donate/{donation}', [DonationController::class, 'show'])->name('donations.show');
+
+// ── Auth Routes ────────────────────────────────────────────────────────────
+require __DIR__.'/auth.php';
+>>>>>>> 8c6065881ad1aa10421c2a358ef42e394413b4d5
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
@@ -50,6 +67,14 @@ Route::middleware(['auth', 'admin'])
         Route::resource('complaints', Admin\ComplaintController::class);
         Route::post('complaints/{complaint}/respond', [Admin\ComplaintController::class, 'respond'])->name('complaints.respond');
 
+<<<<<<< HEAD
+=======
+        // Donations Admin
+        Route::get('donations', [DonationController::class, 'adminIndex'])->name('donations.index');
+        Route::patch('donations/{donation}/verify', [DonationController::class, 'verify'])->name('donations.verify');
+
+        // Reports
+>>>>>>> 8c6065881ad1aa10421c2a358ef42e394413b4d5
         Route::get('reports', [Admin\ReportController::class, 'index'])->name('reports.index');
         Route::get('reports/generate/{type}', [Admin\ReportController::class, 'generate'])->name('reports.generate');
     });

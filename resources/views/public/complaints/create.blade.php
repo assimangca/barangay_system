@@ -139,6 +139,14 @@
                            py-3 rounded-lg text-sm">
                 Submit Complaint
             </button>
+            {{-- Back to Home Button --}}
+   {{-- Back to Home Button (Now same size) --}}
+    <div class="mt-4">
+        <a href="{{ route('home') }}" 
+           class="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 rounded-lg text-sm transition shadow-sm">
+            ← Back to Home
+        </a>
+    </div>
         </form>
     </div>
 </div>
