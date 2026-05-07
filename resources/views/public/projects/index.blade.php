@@ -37,35 +37,6 @@
     </div>
 </nav>
 
-<!-- BACK BUTTON -->
-<div class="mx-auto max-w-7xl px-6 pt-6">
-
-    <a href="{{ route('home') }}"
-       class="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-md px-5 py-2 text-sm font-semibold text-blue-950 shadow-md ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg">
-
-        ← Back to Homepage
-
-    </a>
-
-</div>
-
-<main class="mx-auto max-w-7xl px-6 py-10">
-
-    <!-- HEADER -->
-    <div class="mb-10">
-
-        <p class="mb-4 inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-800">
-            Community Transparency Portal
-        </p>
-
-        <h1 class="text-5xl font-extrabold tracking-tight text-blue-950">
-            Barangay Projects
-        </h1>
-
-        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-            View ongoing, planned, and completed barangay projects
-            with progress, budgets, and project details.
-        </p>
 
     </div>
 
@@ -204,13 +175,5 @@
         @endforelse
 
     </div>
-
-    <!-- PAGINATION -->
-    <div class="mt-8">
-        {{ $projects->links() }}
-    </div>
-
-</main>
-
 </body>
 </html>
