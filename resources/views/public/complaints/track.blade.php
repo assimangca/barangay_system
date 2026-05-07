@@ -196,7 +196,5 @@
 
     @endif
 
-</main>
-
 </body>
 </html>
