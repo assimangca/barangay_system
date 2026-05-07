@@ -3,33 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
-    <title>Barangay System</title>
-=======
     <title>Barangay Digital Service Portal</title>
->>>>>>> Stashed changes
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100 min-h-screen">
 
-<<<<<<< Updated upstream
-<nav class="bg-blue-900 text-white px-6 py-4 flex items-center justify-between">
-    <h1 class="text-lg font-bold">Barangay System</h1>
-    <div class="flex gap-4 text-sm">
-        <a href="{{ route('projects.index') }}" class="hover:underline">Projects</a>
-        <a href="{{ route('complaints.create') }}" class="hover:underline">Submit Complaint</a>
-        <a href="{{ route('complaints.track') }}" class="hover:underline">Track Complaint</a>
-        <a href="{{ route('login') }}" class="bg-white text-blue-900 px-3 py-1 rounded font-medium hover:bg-gray-100">Admin Login</a>
-    </div>
-</nav>
-
-<div class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h2 class="text-4xl font-bold text-blue-900 mb-4">Welcome to Our Barangay</h2>
-    <p class="text-gray-600 text-lg mb-8">Transparent governance for our community.</p>
-    
-    {{-- The buttons that were here have been removed --}}
-</div>
-=======
 <body class="min-h-screen text-slate-900"
       style="
         background-color: #f8fafc;
@@ -42,10 +19,9 @@
 <!-- RESPONSIVE NAVBAR -->
 <nav class="sticky top-0 z-50 bg-blue-950 text-white shadow-lg">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-        <!-- Text size adjusts based on screen: text-sm (mobile) to text-xl (desktop) -->
-        <h1 class="truncate pr-2 text-sm font-bold tracking-tight sm:text-lg md:text-xl">
-            Barangay System
-        </h1>
+        <a href="{{ url('/') }}" class="text-sm font-bold tracking-tight sm:text-lg md:text-xl hover:text-blue-200 transition">
+            Barangay Digital Service Portal
+        </a>
 
         <div class="flex items-center gap-3 text-xs font-medium sm:gap-6 sm:text-sm">
             <a href="{{ route('projects.index') }}" class="hidden transition hover:text-blue-200 md:block">Projects</a>
@@ -63,12 +39,12 @@
 <main class="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-[1500px] items-center justify-center px-6 py-12">
     <section class="grid w-full max-w-[1250px] items-center gap-12 md:grid-cols-2 lg:gap-20">
 
+        <!-- LEFT SIDE: WELCOME TEXT -->
         <div>
             <p class="mb-6 inline-block rounded-full bg-blue-100 px-5 py-2 text-xs font-semibold text-blue-800 sm:text-sm">
                 Empowering Our Community Through Transparency
             </p>
 
-            <!-- FIXED SHINE TEXT -->
             <h2 class="shine-text mb-8 text-5xl font-extrabold leading-tight tracking-tight md:text-6xl">
                 Welcome to Our <br>
                 Barangay
@@ -91,12 +67,11 @@
             </div>
         </div>
 
-        <!-- RIGHT SIDE CARD -->
+        <!-- RIGHT SIDE: CARD -->
         <div class="hidden md:block">
             <div class="rounded-[2.5rem] bg-white p-8 shadow-2xl ring-1 ring-slate-200">
 
                 <div class="relative mb-8 flex h-64 items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-700 to-blue-950 text-white">
-                    <!-- MAP LINES SVG -->
                     <svg class="absolute inset-0 h-full w-full opacity-30" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M90 150 C160 90, 230 120, 290 80 S430 100, 490 70 S650 90, 720 140" stroke="white" stroke-width="3"/>
                         <path d="M80 260 C180 210, 260 250, 350 190 S520 210, 710 260" stroke="white" stroke-width="3"/>
@@ -125,10 +100,10 @@
 </main>
 
 <style>
-/* IMPROVED SHINE EFFECT (FIXED GLITCH) */
 .shine-text {
     color: #1e3a8a;
     position: relative;
+    display: inline-block;
 }
 
 .shine-text::after {
@@ -139,16 +114,16 @@
     width: 60%;
     height: 100%;
     transform: skewX(-25deg);
-    pointer-events: none; /* Fix: Don't block clicks */
+    pointer-events: none;
     background: linear-gradient(
         to right,
         transparent 0%,
         rgba(255,255,255,0) 30%,
-        rgba(255,255,255,0.4) 50%, /* Lowered from 0.9 to 0.4 for smoothness */
+        rgba(255,255,255,0.4) 50%,
         rgba(255,255,255,0) 70%,
         transparent 100%
     );
-    animation: shineSwipe 4s ease-in-out infinite; /* Slower animation for better feel */
+    animation: shineSwipe 4s ease-in-out infinite;
 }
 
 @keyframes shineSwipe {
@@ -157,6 +132,5 @@
 }
 </style>
 
->>>>>>> Stashed changes
 </body>
 </html>

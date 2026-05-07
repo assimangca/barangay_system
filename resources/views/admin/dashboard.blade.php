@@ -72,7 +72,7 @@
         {{-- Recent Complaints --}}
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
             <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
-                <h3 class="font-semibold text-gray-800">Recent Complaints</h3>
+                <h3 class="font-semibold text-gray-800">Last Complaints</h3>
                 <a href="{{ route('admin.complaints.index') }}" class="text-xs text-blue-600 hover:underline">View all</a>
             </div>
             <div class="divide-y divide-gray-50">
