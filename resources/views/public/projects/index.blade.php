@@ -19,7 +19,6 @@
 </nav>
 
 <div class="max-w-6xl mx-auto px-6 py-8">
-
     {{-- Header + Filter --}}
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
         <h1 class="text-2xl font-bold text-gray-800">Barangay Projects</h1>
@@ -89,7 +88,13 @@
         </div>
         @endforelse
     </div>
-
+    {{-- Back Button Added Below --}}
+      <div class="mb-6">
+        <a href="{{ route('home') }}" 
+           class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+            ← Back to Home
+        </a>
+    </div>
     <div class="mt-6">{{ $projects->links() }}</div>
 </div>
 
