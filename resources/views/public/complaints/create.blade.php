@@ -17,8 +17,20 @@
     </div>
 </nav>
 
+<<<<<<< Updated upstream
 <div class="max-w-2xl mx-auto px-6 py-8">
     <div class="bg-white rounded-xl border border-gray-200 p-6">
+=======
+<!-- MAIN -->
+<div class="relative z-10 mx-auto max-w-3xl px-6 py-10">
+ <!-- BACK BUTTON -->
+  <a href="{{ route('home') }}" class="group mb-6 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-slate-700 shadow-sm ring-1 ring-slate-200 transition-all hover:bg-blue-50 hover:text-blue-700 hover:shadow-md active:scale-95">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="h-4 w-4 transition-transform group-hover:-translate-x-1">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+    </svg>
+    BACK TO HOME
+</a>
+>>>>>>> Stashed changes
 
         <h1 class="text-xl font-bold text-gray-800 mb-1">Submit a Complaint or Report</h1>
         <p class="text-sm text-gray-500 mb-6">
