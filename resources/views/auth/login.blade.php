@@ -44,7 +44,6 @@
             <input type="checkbox" name="remember" id="remember" class="rounded">
             <label for="remember" class="text-sm text-gray-600">Remember me</label>
         </div>
-<<<<<<< HEAD
         <button type="submit"
                 class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
             Sign In
@@ -55,13 +54,6 @@
     </a>
 </div>
     </form>
-=======
-      <button type="submit"
-            class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2.5 rounded-lg text-sm transition">
-        Sign In
-    </button>
-</form>
->>>>>>> 8c6065881ad1aa10421c2a358ef42e394413b4d5
 
 <div class="mt-4">
     <a href="{{ route('home') }}" 
