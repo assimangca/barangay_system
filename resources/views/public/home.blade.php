@@ -16,7 +16,7 @@
             <a href="{{ route('projects.index') }}" class="hover:underline">Projects</a>
             <a href="{{ route('complaints.create') }}" class="hover:underline">Submit Complaint</a>
             <a href="{{ route('complaints.track') }}" class="hover:underline">Track Complaint</a>
-            <a href="{{ route('donations.create') }}" class="bg-yellow-400 text-blue-900 px-3 py-1 rounded font-medium hover:bg-yellow-300">❤️ Donate</a>
+            <a href="{{ route('donations.create') }}" class="bg-yellow-400 text-blue-900 px-4 py-2 rounded font-medium hover:bg-yellow-300 text-sm">Donate Now</a>
             <a href="{{ route('login') }}" class="bg-white text-blue-900 px-3 py-1 rounded font-medium hover:bg-gray-100">Admin Login</a>
         </div>
     </nav>
