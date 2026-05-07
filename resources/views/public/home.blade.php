@@ -25,8 +25,9 @@
 
         <div class="flex items-center gap-3 text-xs font-medium sm:gap-6 sm:text-sm">
             <a href="{{ route('projects.index') }}" class="hidden transition hover:text-blue-200 md:block">Projects</a>
+            <a href="{{ route('officials.index') }}" class="transition hover:text-blue-200">Officials</a>
             <a href="{{ route('complaints.create') }}" class="transition hover:text-blue-200">Submit Complaint</a>
-            <a href="{{ route('complaints.track') }}" class="hidden transition hover:text-blue-200 sm:block">Track Complaint</a>
+            <a href="{{ route('complaints.track') }}" class="hidden transition hover:text-blue-200 sm:block">Track</a>
 
             <a href="{{ route('login') }}"
                class="rounded-full bg-white px-4 py-2 text-blue-950 shadow transition duration-300 hover:-translate-y-1 hover:bg-blue-100 sm:px-5">
@@ -36,11 +37,12 @@
     </div>
 </nav>
 
-<main class="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-[1500px] items-center justify-center px-6 py-12">
-    <section class="grid w-full max-w-[1250px] items-center gap-12 md:grid-cols-2 lg:gap-20">
+<!-- MAIN SECTION WITH GRID -->
+<main class="relative mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl items-center justify-center px-6 py-12">
+    <section class="grid w-full items-center gap-12 md:grid-cols-2 lg:gap-20">
 
         <!-- LEFT SIDE: WELCOME TEXT -->
-        <div>
+        <div class="z-10">
             <p class="mb-6 inline-block rounded-full bg-blue-100 px-5 py-2 text-xs font-semibold text-blue-800 sm:text-sm">
                 Empowering Our Community Through Transparency
             </p>
@@ -87,8 +89,8 @@
                     </svg>
                 </div>
 
-                <div class="text-center">
-                    <h3 class="text-3xl font-extrabold tracking-tight text-blue-950">VISIT OUR PAGE</h3>
+                <div class="text-center text-blue-950">
+                    <h3 class="text-3xl font-extrabold tracking-tight">VISIT OUR PAGE</h3>
                     <p class="mx-auto mt-4 max-w-md text-base leading-relaxed text-slate-500">
                         Stay connected and updated with our latest projects, announcements, and barangay services.
                     </p>

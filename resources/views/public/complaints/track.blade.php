@@ -8,13 +8,29 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-blue-50 via-slate-100 to-slate-200 text-slate-900">
 
+<!-- RESPONSIVE NAVBAR -->
 <nav class="sticky top-0 z-50 bg-blue-950 text-white shadow-lg">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="{{ route('home') }}" class="text-xl font-bold">Barangay Digital Service Portal</a>
-        <div class="flex items-center gap-6 text-sm font-medium">
-            <a href="{{ route('projects.index') }}" class="transition hover:text-blue-200">Projects</a>
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
+        <a href="{{ url('/') }}" class="text-sm font-bold tracking-tight sm:text-lg md:text-xl hover:text-blue-200 transition">
+            Barangay Digital Service Portal
+        </a>
+
+        <div class="flex items-center gap-3 text-xs font-medium sm:gap-6 sm:text-sm">
+            <!-- Projects link -->
+            <a href="{{ route('projects.index') }}" class="hidden transition hover:text-blue-200 md:block">Projects</a>
+            
+            <!-- NEW: Officials link -->
+            <a href="{{ route('officials.index') }}" class="transition hover:text-blue-200">Officials</a>
+            
+            <!-- Complaint links -->
             <a href="{{ route('complaints.create') }}" class="transition hover:text-blue-200">Submit Complaint</a>
-            <a href="{{ route('complaints.track') }}" class="text-blue-200">Track Complaint</a>
+            <a href="{{ route('complaints.track') }}" class="hidden transition hover:text-blue-200 sm:block">Track Complaint</a>
+
+            <!-- Login button -->
+            <a href="{{ route('login') }}"
+               class="rounded-full bg-white px-4 py-2 text-blue-950 shadow transition duration-300 hover:-translate-y-1 hover:bg-blue-100 sm:px-5">
+                Login
+            </a>
         </div>
     </div>
 </nav>

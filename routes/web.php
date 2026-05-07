@@ -59,3 +59,7 @@ Route::middleware(['auth', 'admin'])
         Route::get('reports', [Admin\ReportController::class, 'index'])->name('reports.index');
         Route::get('reports/generate/{type}', [Admin\ReportController::class, 'generate'])->name('reports.generate');
     });
+
+    use App\Http\Controllers\Public\OfficialController;
+
+Route::get('/officials', [OfficialController::class, 'index'])->name('officials.index');
