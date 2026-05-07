@@ -111,7 +111,7 @@ class DonationController extends Controller
             'verified_at' => $request->status === 'verified' ? now() : null,
         ]);
 
-        return redirect()->route('donations.admin')
+        return redirect()->route('admin.donations.index')
                          ->with('success', 'Donation status updated successfully!');
     }
 }
