@@ -68,7 +68,8 @@
                 Community Transparency Portal
             </p>
 
-            <h2 class="mb-8 text-5xl font-extrabold leading-tight text-blue-950 md:text-6xl">
+            <!-- SHINE TEXT -->
+            <h2 class="shine-text mb-8 text-5xl font-extrabold leading-tight md:text-6xl">
                 Welcome to Our <br>
                 Barangay
             </h2>
@@ -172,6 +173,53 @@
     </section>
 
 </main>
+
+<!-- SHINE EFFECT -->
+<style>
+
+.shine-text{
+    color:#172554;
+    position:relative;
+    display:inline-block;
+    overflow:hidden;
+}
+
+.shine-text::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-150%;
+
+    width:40%;
+    height:100%;
+
+    transform:skewX(-25deg);
+
+    background:linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255,255,255,0.15) 40%,
+        rgba(255,255,255,0.9) 50%,
+        rgba(255,255,255,0.15) 60%,
+        transparent 100%
+    );
+
+    animation:shineSwipe 3s ease-in-out infinite;
+}
+
+@keyframes shineSwipe{
+
+    0%{
+        left:-150%;
+    }
+
+    100%{
+        left:150%;
+    }
+
+}
+
+</style>
 
 </body>
 </html>
