@@ -9,23 +9,19 @@
 </head>
 
 <body class="bg-gray-100 min-h-screen">
-
     <nav class="bg-blue-900 text-white px-6 py-4 flex items-center justify-between">
         <h1 class="text-lg font-bold">Barangay System</h1>
-        <div class="flex gap-4 text-sm">
+        <div class="flex gap-4 text-sm items-center">
             <a href="{{ route('projects.index') }}" class="hover:underline">Projects</a>
             <a href="{{ route('complaints.create') }}" class="hover:underline">Submit Complaint</a>
             <a href="{{ route('complaints.track') }}" class="hover:underline">Track Complaint</a>
-            <a href="{{ route('donations.create') }}" class="bg-yellow-400 text-blue-900 px-4 py-2 rounded font-medium hover:bg-yellow-300 text-sm">Donate Now</a>
+            <a href="{{ route('donations.create') }}" style="background:#facc15;color:#1e3a8a;padding:8px 16px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block;">❤️ Donate Now</a>
             <a href="{{ route('login') }}" class="bg-white text-blue-900 px-3 py-1 rounded font-medium hover:bg-gray-100">Admin Login</a>
         </div>
     </nav>
-
     <div class="max-w-4xl mx-auto px-6 py-16 text-center">
         <h2 class="text-4xl font-bold text-blue-900 mb-4">Welcome to Our Barangay</h2>
         <p class="text-gray-600 text-lg mb-8">Transparent governance for our community.</p>
-
-        {{-- The buttons that were here have been removed --}}
     </div>
 </body>
 
