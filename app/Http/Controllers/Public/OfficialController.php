@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Official;
+use Illuminate\Http\Request;
 
 class OfficialController extends Controller
 {
     public function index()
     {
-        $officials = Official::where('is_active', true)->orderBy('rank', 'asc')->get();
-        
+        $officials = Official::orderBy('order_priority', 'asc')->get();
         return view('public.officials.index', compact('officials'));
     }
 }

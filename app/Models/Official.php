@@ -2,16 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Official extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'name', 
-        'position', 
-        'committee', 
-        'photo_path', 
-        'rank', 
-        'is_active'
+        'name',
+        'position',
+        'image',
+        'term_years',
+        'order_priority',
     ];
 }

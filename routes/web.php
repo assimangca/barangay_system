@@ -11,7 +11,7 @@ Route::get('/projects/{project}', [PublicController\ProjectController::class, 's
 Route::get('/track', [PublicController\ComplaintController::class, 'track'])->name('complaints.track');
 Route::post('/complaints', [PublicController\ComplaintController::class, 'store'])->name('complaints.store');
 Route::get('/complaints/submit', [PublicController\ComplaintController::class, 'create'])->name('complaints.create');
-
+Route::get('/officials', [PublicController\OfficialController::class, 'index'])->name('officials.index');
 // ── Donation Public Routes ─────────────────────────────────────────────────
 Route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
 Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
@@ -58,6 +58,7 @@ Route::middleware(['auth', 'admin'])
         // Reports
         Route::get('reports', [Admin\ReportController::class, 'index'])->name('reports.index');
         Route::get('reports/generate/{type}', [Admin\ReportController::class, 'generate'])->name('reports.generate');
+        
     });
 
     use App\Http\Controllers\Public\OfficialController;
