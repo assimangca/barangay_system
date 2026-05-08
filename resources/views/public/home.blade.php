@@ -9,7 +9,6 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-
 <body class="min-h-screen overflow-x-hidden bg-[#071326] text-slate-900">
 
 <!-- BLUEPRINT BACKGROUND -->
@@ -110,21 +109,30 @@
                 and track your concerns with ease.
             </p>
 
-            <div class="flex flex-col gap-4 sm:flex-row">
+            <div class="flex flex-col gap-4">
 
-                <a href="{{ route('projects.index') }}"
-                   class="rounded-full bg-blue-700 px-8 py-4 text-center font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-blue-800 hover:shadow-xl active:scale-95">
-                    View Projects
-                </a>
+                <div class="flex flex-col gap-4 sm:flex-row">
 
-                <a href="{{ route('complaints.create') }}"
-                   class="rounded-full border border-blue-400 bg-white/10 backdrop-blur-md px-8 py-4 text-center font-semibold text-white shadow transition duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg active:scale-95">
-                    Submit Complaint
-                </a>
+                    <a href="{{ route('projects.index') }}"
+                       class="rounded-full bg-blue-700 px-8 py-4 text-center font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-blue-800 hover:shadow-xl active:scale-95">
+                        View Projects
+                    </a>
 
-                <a href="{{ route('complaints.track') }}"
-                   class="rounded-full border border-blue-400 bg-white/10 backdrop-blur-md px-8 py-4 text-center font-semibold text-white shadow transition duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg active:scale-95">
-                    Track Complaint
+                    <a href="{{ route('complaints.create') }}"
+                       class="rounded-full border border-blue-400 bg-white/10 backdrop-blur-md px-8 py-4 text-center font-semibold text-white shadow transition duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg active:scale-95">
+                        Submit Complaint
+                    </a>
+
+                    <a href="{{ route('complaints.track') }}"
+                       class="rounded-full border border-blue-400 bg-white/10 backdrop-blur-md px-8 py-4 text-center font-semibold text-white shadow transition duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg active:scale-95">
+                        Track Complaint
+                    </a>
+
+                </div>
+
+                <a href="{{ route('donations.create') }}"
+                   class="w-fit rounded-full bg-yellow-400 px-8 py-4 text-center font-bold text-blue-950 shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-yellow-300 hover:shadow-xl active:scale-95">
+                    💖 Donate Now
                 </a>
 
             </div>
@@ -282,24 +290,4 @@
 </style>
 
 </body>
-=======
-
-<body class="bg-gray-100 min-h-screen">
-    <nav class="bg-blue-900 text-white px-6 py-4 flex items-center justify-between">
-        <h1 class="text-lg font-bold">Barangay System</h1>
-        <div class="flex gap-4 text-sm items-center">
-            <a href="{{ route('projects.index') }}" class="hover:underline">Projects</a>
-            <a href="{{ route('complaints.create') }}" class="hover:underline">Submit Complaint</a>
-            <a href="{{ route('complaints.track') }}" class="hover:underline">Track Complaint</a>
-            <a href="{{ route('donations.create') }}" style="background:#facc15;color:#1e3a8a;padding:8px 16px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;display:inline-block;">❤️ Donate Now</a>
-            <a href="{{ route('login') }}" class="bg-white text-blue-900 px-3 py-1 rounded font-medium hover:bg-gray-100">Admin Login</a>
-        </div>
-    </nav>
-    <div class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <h2 class="text-4xl font-bold text-blue-900 mb-4">Welcome to Our Barangay</h2>
-        <p class="text-gray-600 text-lg mb-8">Transparent governance for our community.</p>
-    </div>
-</body>
-
-
 </html>
