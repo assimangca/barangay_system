@@ -287,7 +287,7 @@
     }
 }
 
-<!-- UI Fix -->
+<!-- Final Working UI -->
 
 </style>
 
