@@ -1,18 +1,33 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Public as PublicController;
 use App\Http\Controllers\DonationController;
 
-// ── Public Routes ──────────────────────────────────────────────────────────
+/*
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/', [PublicController\HomeController::class, 'index'])->name('home');
+
 Route::get('/projects', [PublicController\ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/{project}', [PublicController\ProjectController::class, 'show'])->name('projects.show');
-Route::get('/track', [PublicController\ComplaintController::class, 'track'])->name('complaints.track');
-Route::post('/complaints', [PublicController\ComplaintController::class, 'store'])->name('complaints.store');
-Route::get('/complaints/submit', [PublicController\ComplaintController::class, 'create'])->name('complaints.create');
+
 Route::get('/officials', [PublicController\OfficialController::class, 'index'])->name('officials.index');
-// ── Donation Public Routes ─────────────────────────────────────────────────
+
+Route::get('/complaints/submit', [PublicController\ComplaintController::class, 'create'])->name('complaints.create');
+Route::post('/complaints', [PublicController\ComplaintController::class, 'store'])->name('complaints.store');
+Route::get('/track', [PublicController\ComplaintController::class, 'track'])->name('complaints.track');
+
+/*
+|--------------------------------------------------------------------------
+| Donation Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
 Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
 Route::get('/donate/track', [DonationController::class, 'track'])->name('donations.track');
@@ -20,10 +35,20 @@ Route::get('/donate/thank-you/{donation}', [DonationController::class, 'thankYou
 Route::get('/donate/history', [DonationController::class, 'index'])->name('donations.index');
 Route::get('/donate/{donation}', [DonationController::class, 'show'])->name('donations.show');
 
-// ── Auth Routes ────────────────────────────────────────────────────────────
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+*/
+
 require __DIR__.'/auth.php';
 
-// ── Admin Routes ───────────────────────────────────────────────────────────
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::middleware(['auth', 'admin'])
     ->prefix('admin')
     ->name('admin.')
@@ -32,22 +57,30 @@ Route::middleware(['auth', 'admin'])
         // Dashboard
         Route::get('/dashboard', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
-        // Projects
+        // Password Management (ADDED THIS TO FIX THE ERROR)
+        // Note: You may need to create a ProfileController or add these methods to an existing one
+        Route::get('/password/edit', [Admin\DashboardController::class, 'editPassword'])->name('password.edit');
+        Route::put('/password/update', [Admin\DashboardController::class, 'updatePassword'])->name('password.update');
+
+        // Projects & Milestones
         Route::resource('projects', Admin\ProjectController::class);
         Route::post('projects/{project}/milestones', [Admin\ProjectController::class, 'storeMilestone'])->name('projects.milestones.store');
         Route::post('milestones/{milestone}/toggle', [Admin\ProjectController::class, 'toggleMilestone'])->name('milestones.toggle');
         Route::delete('milestones/{milestone}', [Admin\ProjectController::class, 'destroyMilestone'])->name('milestones.destroy');
+        
+        // Officials Admin Management
+        Route::resource('officials', Admin\OfficialController::class);
 
         // Budgets
         Route::resource('budgets', Admin\BudgetController::class);
 
-        // Expenses — allocations MUST be before resource
+        // Expenses
         Route::get('expenses/allocations', [Admin\ExpenseController::class, 'getAllocations'])->name('expenses.allocations');
         Route::resource('expenses', Admin\ExpenseController::class);
         Route::post('expenses/{expense}/approve', [Admin\ExpenseController::class, 'approve'])->name('expenses.approve');
         Route::post('expenses/{expense}/reject',  [Admin\ExpenseController::class, 'reject'])->name('expenses.reject');
 
-        // Complaints
+        // Complaints Admin
         Route::resource('complaints', Admin\ComplaintController::class);
         Route::post('complaints/{complaint}/respond', [Admin\ComplaintController::class, 'respond'])->name('complaints.respond');
 
@@ -60,7 +93,3 @@ Route::middleware(['auth', 'admin'])
         Route::get('reports/generate/{type}', [Admin\ReportController::class, 'generate'])->name('reports.generate');
         
     });
-
-    use App\Http\Controllers\Public\OfficialController;
-
-Route::get('/officials', [OfficialController::class, 'index'])->name('officials.index');

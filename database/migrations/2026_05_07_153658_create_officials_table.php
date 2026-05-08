@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('officials', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Added
-            $table->string('position'); // Added
-            $table->string('committee')->nullable(); // Added
-            $table->string('photo_path')->nullable(); // Added
-            $table->integer('rank')->default(0); // Added
-            $table->boolean('is_active')->default(true); // Added
+            $table->string('name');
+            $table->string('position');
+            $table->string('image')->nullable(); // Changed from photo_path to image
+            $table->string('term_years')->default('2023-2025'); // Added this
+            $table->integer('order_priority')->default(0); // Changed from rank to order_priority
             $table->timestamps();
         });
     }

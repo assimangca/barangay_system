@@ -116,42 +116,54 @@
         </div>
     </nav>
 
-    <!-- SIDEBAR -->
-    <aside class="fixed left-0 top-[88px] z-40 hidden h-[calc(100vh-88px)] w-64 border-r border-blue-400/10 bg-blue-950/90 px-5 py-8 text-white shadow-2xl backdrop-blur-md md:block">
+    <!-- STANDARDIZED SIDEBAR -->
+<aside class="fixed left-0 top-[88px] z-40 hidden h-[calc(100vh-88px)] w-64 border-r border-blue-400/10 bg-blue-950/90 px-5 py-8 text-white shadow-2xl backdrop-blur-md md:block">
+    <div class="flex flex-col gap-4 text-sm font-semibold">
+        
+        <!-- Projects -->
+        <a href="{{ route('projects.index') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('projects.*') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Projects
+        </a>
 
+        <!-- Submit Complaint -->
+        <a href="{{ route('complaints.create') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('complaints.create') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Submit Complaint
+        </a>
 
+        <!-- Track Complaint -->
+        <a href="{{ route('complaints.track') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('complaints.track') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Track Complaint
+        </a>
 
-        <div class="flex flex-col gap-4 text-sm font-semibold">
+        <!-- Barangay Officials -->
+        <a href="{{ route('officials.index') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('officials.*') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Barangay Officials
+        </a>
 
-            <a href="{{ route('projects.index') }}"
-                class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
-            {{ request()->routeIs('projects.*') ? 'bg-blue-700 text-white hover:bg-blue-800' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
-                Projects
-            </a>
-            <a href="{{ route('complaints.create') }}"
-                class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
-            {{ request()->routeIs('complaints.create') ? 'bg-blue-700 text-white hover:bg-blue-800' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
-                Submit Complaint
-            </a>
-            <a href="{{ route('complaints.track') }}"
-                class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
-            {{ request()->routeIs('complaints.track') ? 'bg-blue-700 text-white hover:bg-blue-800' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
-                Track Complaint
-            </a>
-            <a href="{{ route('donations.create') }}"
-                class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
-            {{ request()->routeIs('donations.create') ? 'bg-blue-700 text-white hover:bg-blue-800' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
-                Donate Now
-            </a>
-            <a href="{{ route('donations.track') }}"
-                class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
-            {{ request()->routeIs('donations.track') ? 'bg-blue-700 text-white hover:bg-blue-800' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
-                Track Donation
-            </a>
+        <!-- Donate Now -->
+        <a href="{{ route('donations.create') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('donations.create') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Donate Now
+        </a>
 
-        </div>
+        <!-- Track Donation -->
+        <a href="{{ route('donations.track') }}"
+            class="rounded-2xl px-5 py-4 text-center shadow transition duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95
+            {{ request()->routeIs('donations.track') ? 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-500/20' : 'border border-blue-400 bg-white/10 text-white hover:bg-white/20' }}">
+            Track Donation
+        </a>
 
-    </aside>
+    </div>
+</aside>
 
     <!-- MOBILE SIDEBAR BUTTONS -->
     <div class="relative z-10 mx-auto flex max-w-7xl gap-3 overflow-x-auto px-6 pt-6 md:hidden">
