@@ -21,7 +21,6 @@
          ">
     </div>
 
-
     <div class="absolute inset-0 opacity-15"
          style="
             background-image:
@@ -29,28 +28,6 @@
                 linear-gradient(to bottom, rgba(255,255,255,0.10) 1px, transparent 1px);
             background-size: 90px 90px;
          ">
-
-<div class="max-w-6xl mx-auto px-6 py-8">
-    {{-- Header + Filter --}}
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Barangay Projects</h1>
-        <form method="GET" class="flex gap-2">
-            <input type="text" name="search" value="{{ request('search') }}"
-                   placeholder="Search projects..."
-                   class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <select name="status"
-                    class="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="">All Status</option>
-                <option value="planned"   {{ request('status') === 'planned'   ? 'selected' : '' }}>Planned</option>
-                <option value="ongoing"   {{ request('status') === 'ongoing'   ? 'selected' : '' }}>Ongoing</option>
-                <option value="completed" {{ request('status') === 'completed' ? 'selected' : '' }}>Completed</option>
-            </select>
-            <button type="submit"
-                    class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-800">
-                Filter
-            </button>
-        </form>
-
     </div>
 
     <div class="absolute left-[-150px] top-[120px] h-[500px] w-[500px] rounded-full bg-blue-700/20 blur-3xl"></div>
@@ -338,7 +315,6 @@
 
     </div>
 
-
     <!-- PAGINATION -->
     <div class="mt-8">
         {{ $projects->links() }}
@@ -431,16 +407,6 @@
     }
 }
 </style>
-
-    {{-- Back Button Added Below --}}
-      <div class="mb-6">
-        <a href="{{ route('home') }}" 
-           class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
-            ← Back to Home
-        </a>
-    </div>
-    <div class="mt-6">{{ $projects->links() }}</div>
-</div>
 
 </body>
 </html>
