@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\Public as PublicController;
+use App\Http\Controllers\DonationController;
 
 // ── Public Routes ──────────────────────────────────────────────────────────
 Route::get('/', [PublicController\HomeController::class, 'index'])->name('home');
@@ -10,6 +11,14 @@ Route::get('/projects/{project}', [PublicController\ProjectController::class, 's
 Route::get('/track', [PublicController\ComplaintController::class, 'track'])->name('complaints.track');
 Route::post('/complaints', [PublicController\ComplaintController::class, 'store'])->name('complaints.store');
 Route::get('/complaints/submit', [PublicController\ComplaintController::class, 'create'])->name('complaints.create');
+
+// ── Donation Public Routes ─────────────────────────────────────────────────
+Route::get('/donate', [DonationController::class, 'create'])->name('donations.create');
+Route::post('/donate', [DonationController::class, 'store'])->name('donations.store');
+Route::get('/donate/track', [DonationController::class, 'track'])->name('donations.track');
+Route::get('/donate/thank-you/{donation}', [DonationController::class, 'thankYou'])->name('donations.thank-you');
+Route::get('/donate/history', [DonationController::class, 'index'])->name('donations.index');
+Route::get('/donate/{donation}', [DonationController::class, 'show'])->name('donations.show');
 
 // ── Auth Routes ────────────────────────────────────────────────────────────
 require __DIR__.'/auth.php';
@@ -41,6 +50,10 @@ Route::middleware(['auth', 'admin'])
         // Complaints
         Route::resource('complaints', Admin\ComplaintController::class);
         Route::post('complaints/{complaint}/respond', [Admin\ComplaintController::class, 'respond'])->name('complaints.respond');
+
+        // Donations Admin
+        Route::get('donations', [DonationController::class, 'adminIndex'])->name('donations.index');
+        Route::patch('donations/{donation}/verify', [DonationController::class, 'verify'])->name('donations.verify');
 
         // Reports
         Route::get('reports', [Admin\ReportController::class, 'index'])->name('reports.index');

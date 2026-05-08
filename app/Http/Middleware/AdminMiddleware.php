@@ -12,7 +12,7 @@ class AdminMiddleware
             return redirect()->route('login');
         }
 
-        if (!auth()->user()->isAdmin()) {
+        if (!auth()->user()->hasAnyRole(['admin', 'captain', 'treasurer', 'secretary'])) {
             abort(403, 'Access denied. Admin only.');
         }
 
